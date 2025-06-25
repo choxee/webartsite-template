@@ -1,0 +1,784 @@
+/* ==============================================
+   STREAMLIT BOOKING PAGE CSS TEMPLATE
+   ============================================== */
+
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #262730;
+  background-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Main App Container */
+.stApp {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0;
+}
+
+.stAppEmbeddingId-sydrjgxn657a {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+}
+
+/* ==============================================
+   SIDEBAR STYLES
+   ============================================== */
+
+/* Main Sidebar Container */
+.stSidebar {
+  background: linear-gradient(180deg, #1e293b 0%, #334155 100%) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1) !important;
+  width: 280px !important;
+  min-height: 100vh !important;
+}
+
+/* Sidebar Content */
+.stSidebar [data-testid="stSidebarContent"] {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Sidebar Header */
+.stSidebar [data-testid="stSidebarHeader"] {
+  background: rgba(0, 0, 0, 0.2) !important;
+  padding: 1rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+}
+
+/* Logo Spacer */
+.stSidebar [data-testid="stLogoSpacer"] {
+  height: 60px !important;
+  background-image: url('https://storage.googleapis.com/public-static-contents-test-0/pezze_logo.jpeg') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Collapse Button */
+.stSidebar [data-testid="stSidebarCollapseButton"] button {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  padding: 0.5rem !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.stSidebar [data-testid="stSidebarCollapseButton"] button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateX(-2px) !important;
+}
+
+/* Navigation Container */
+.stSidebar [data-testid="stSidebarNav"] {
+  padding: 1rem 0 !important;
+  background: transparent !important;
+}
+
+/* Navigation Items List */
+.stSidebar [data-testid="stSidebarNavItems"] {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Section Headers */
+.stSidebar [data-testid="stNavSectionHeader"] {
+  color: #94a3b8 !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding: 1.5rem 1.5rem 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+}
+
+.stSidebar [data-testid="stNavSectionHeader"]::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -1px !important;
+  left: 1.5rem !important;
+  right: 1.5rem !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%) !important;
+  border-radius: 1px !important;
+}
+
+/* Navigation List Items */
+.stSidebar li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Navigation Link Containers */
+.stSidebar [data-testid="stSidebarNavLinkContainer"] {
+  margin: 0.25rem 0 !important;
+  padding: 0 1rem !important;
+}
+
+/* Navigation Links */
+.stSidebar [data-testid="stSidebarNavLink"] {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.75rem 1rem !important;
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.stSidebar [data-testid="stSidebarNavLink"]::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  height: 100% !important;
+  width: 0 !important;
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%) !important;
+  transition: width 0.3s ease !important;
+  z-index: 0 !important;
+}
+
+.stSidebar [data-testid="stSidebarNavLink"] span {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Navigation Link Hover State */
+.stSidebar [data-testid="stSidebarNavLink"]:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  transform: translateX(5px) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.stSidebar [data-testid="stSidebarNavLink"]:hover::before {
+  width: 4px !important;
+}
+
+/* Active Navigation Link */
+.stSidebar [data-testid="stSidebarNavLink"][aria-current="page"] {
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.3) 0%, rgba(124, 58, 237, 0.3) 100%) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(79, 70, 229, 0.5) !important;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3) !important;
+}
+
+.stSidebar [data-testid="stSidebarNavLink"][aria-current="page"]::before {
+  width: 4px !important;
+}
+
+.stSidebar [data-testid="stSidebarNavLink"][aria-current="page"] span {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Sidebar User Content */
+.stSidebar [data-testid="stSidebarUserContent"] {
+  margin-top: auto !important;
+  padding: 1rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Sidebar Resize Handle */
+.stSidebar > div:last-child {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.stSidebar > div:last-child > div {
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%) !important;
+  border-radius: 2px !important;
+}
+
+/* ==============================================
+   HEADER STYLES
+   ============================================== */
+
+.stAppHeader {
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+  border-bottom: none;
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.stAppToolbar {
+  padding: 1rem 2rem;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo Styles */
+.stAppToolbar::before {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-image: url('https://storage.googleapis.com/public-static-contents-test-0/pezze_logo.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 101;
+}
+
+.header-logo {
+  position: absolute;
+  left: 2rem;
+  right: 300rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  z-index: 101;
+}
+
+.header-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Navigation Styles - Centered */
+.rc-overflow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 0 60px 0 270px;
+}
+
+.st-emotion-cache-i72k4l {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.st-emotion-cache-i72k4l:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.st-emotion-cache-epvm6 {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* Dropdown Menu Styles */
+.st-ae {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+/* ==============================================
+   MAIN CONTENT STYLES
+   ============================================== */
+
+.stMain {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: calc(100vh - 120px);
+  width: 100%;
+}
+
+.stMainBlockContainer {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: visible;
+}
+
+/* Additional container adaptivity */
+.stMainBlockContainer > div {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.stVerticalBlock {
+  padding: 2rem;
+}
+
+/* Heading Styles */
+.stHeading h1 {
+  color: #1f2937;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  position: relative;
+}
+
+.stHeading h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+  border-radius: 2px;
+}
+
+/* Alert/Info Box Styles */
+.stAlert {
+  margin: 2rem 0;
+}
+
+.stAlertContainer {
+  background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+  border: 1px solid #93c5fd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+}
+
+.stAlertContainer p {
+  color: #1e40af;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+.stAlertContainer a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.stAlertContainer a:hover {
+  border-bottom-color: #4f46e5;
+}
+
+/* Form Styles */
+.stForm {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
+
+/* Text Input Styles */
+.stTextInput {
+  margin-bottom: 2rem;
+}
+
+.stTextInput label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #374151;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.stTextInput input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: #374151;
+}
+
+.stTextInput input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  transform: translateY(-2px);
+}
+
+.stTextInput input::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Button Styles */
+.stFormSubmitButton {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.stFormSubmitButton button {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.stFormSubmitButton button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+}
+
+.stFormSubmitButton button:active {
+  transform: translateY(-1px);
+}
+
+/* Deploy Button */
+.stAppDeployButton button {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.stAppDeployButton button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Main Menu */
+.stMainMenu button {
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.stMainMenu button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ==============================================
+   RESPONSIVE DESIGN
+   ============================================== */
+
+/* Ensure all Streamlit containers are adaptive */
+.stApp,
+.stApp > div,
+.element-container,
+.stVerticalBlock,
+.stHorizontalBlock {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Make forms and inputs fully responsive */
+.stForm {
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin: 2rem 0;
+  box-sizing: border-box;
+}
+
+/* Responsive columns and layouts */
+.stColumns {
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+.stColumn {
+  flex: 1 !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+@media (max-width: 768px) {
+  .stApp {
+    margin: 10px;
+  }
+
+  .stMain {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .stVerticalBlock {
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .stForm {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .stHeading h1 {
+    font-size: 2rem;
+  }
+
+  .rc-overflow {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 0 50px 0 90px;
+  }
+
+  .st-emotion-cache-i72k4l {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .stAppToolbar::before,
+  .header-logo {
+    width: 32px;
+    height: 32px;
+    left: 1rem;
+  }
+
+  .stAppToolbar {
+    padding: 1rem;
+  }
+
+  /* Sidebar responsive adjustments */
+  .stSidebar {
+    width: 240px !important;
+  }
+
+  .stSidebar [data-testid="stNavSectionHeader"] {
+    padding: 1rem 1rem 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  .stSidebar [data-testid="stSidebarNavLink"] {
+    padding: 0.6rem 0.8rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Responsive columns for tablets */
+  .stColumns {
+    flex-direction: column !important;
+  }
+
+  .stColumn {
+    width: 100% !important;
+    flex: none !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .stHeading h1 {
+    font-size: 1.5rem;
+  }
+
+  .stFormSubmitButton button {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .stTextInput input {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .rc-overflow {
+    margin: 0 10px 0 60px;
+  }
+
+  .stAppToolbar::before,
+  .header-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .stMain {
+    padding: 0.5rem;
+  }
+
+  .stVerticalBlock {
+    padding: 1rem;
+  }
+
+  .stForm {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  /* Sidebar mobile adjustments */
+  .stSidebar {
+    width: 200px !important;
+  }
+
+  .stSidebar [data-testid="stSidebarNavLinkContainer"] {
+    padding: 0 0.5rem !important;
+  }
+
+  .stSidebar [data-testid="stSidebarNavLink"] {
+    padding: 0.5rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Mobile text inputs and forms */
+  .stTextInput {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  .stTextInput label {
+    font-size: 1rem;
+  }
+}
+
+/* ==============================================
+   ANIMATIONS AND EFFECTS
+   ============================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stElementContainer {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.stSidebar [data-testid="stSidebarNavLink"] {
+  animation: slideInLeft 0.4s ease-out !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+}
+
+/* Sidebar scrollbar styling */
+.stSidebar ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.stSidebar ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.stSidebar ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.stSidebar ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Loading States */
+.stSpinner {
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid #4f46e5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hide Streamlit Controls */
+.stToolbarActions,
+.stAppDeployButton,
+.stMainMenu {
+  display: none !important;
+  visibility: hidden !important;
+}

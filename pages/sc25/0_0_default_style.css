@@ -1,0 +1,740 @@
+/* ==============================================
+   FONT IMPORTS
+   ============================================== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ==============================================
+   VARIABLES
+   ============================================== */
+:root {
+  /* Font System - Strada Chiusa Themed */
+  --font-primary: "Bebas Neue", Impact, sans-serif;
+  --font-secondary: "Bebas Neue", Impact, sans-serif;
+  --font-mono: "Bebas Neue", Impact, sans-serif;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Enhanced Font Sizes - Street Style */
+  --font-size-xs: 0.875rem;    /* 14px */
+  --font-size-sm: 1rem;        /* 16px */
+  --font-size-base: 1.25rem;   /* 20px - larger base */
+  --font-size-lg: 1.5rem;      /* 24px */
+  --font-size-xl: 1.875rem;    /* 30px */
+  --font-size-2xl: 2.25rem;    /* 36px */
+  --font-size-3xl: 2.75rem;    /* 44px */
+  --font-size-4xl: 3.5rem;     /* 56px */
+  --font-size-5xl: 4.5rem;     /* 72px - massive headers */
+  --font-size-6xl: 6rem;       /* 96px */
+
+  /* Line Heights */
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+
+  /* Letter Spacing - Urban Style */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0.02em;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+  --letter-spacing-widest: 0.15em;
+
+  /* STRADA CHIUSA COLOR SCHEME - Red/Black Theme */
+  --bg-gradient-primary: linear-gradient(135deg, rgba(0,0,0,0.1), rgba(20,0,0,0.05), rgba(40,10,10,0.03));
+  --bg-gradient-secondary: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+  --gradient-red: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+  --gradient-accent: linear-gradient(135deg, #dc2626, #b91c1c);
+
+  /* Colors */
+  --color-primary: #dc2626;
+  --color-secondary: #ef4444;
+  --color-accent: #f87171;
+  --color-text: #ffffff;
+  --color-text-dark: #ffffff;
+  --color-text-muted: #f3f4f6;
+  --color-text-secondary: #e5e7eb;
+  --color-bg: rgba(0,0,0,0.02);
+  --color-bg-secondary: rgba(20,0,0,0.03);
+  --color-border: rgba(255,255,255,0.1);
+  --color-input-border: rgba(255,255,255,0.15);
+  --color-input-focus: #dc2626;
+  --color-alert-border: rgba(220, 38, 38, 0.3);
+  --color-alert-text: #ef4444;
+
+  /* Effects */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-med: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadows - Ultra light for transparency */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.2);
+  --shadow-red: 0 4px 15px rgba(220, 38, 38, 0.2);
+
+  /* Background Image */
+  --background-image: url('https://storage.googleapis.com/public-static-contents-test-0/photo-sc-folla-0.jpg');
+}
+
+/* ==============================================
+   FONT UTILITY CLASSES
+   ============================================== */
+.font-primary { font-family: var(--font-primary); }
+.font-secondary { font-family: var(--font-secondary); }
+.font-mono { font-family: var(--font-mono); }
+
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-extrabold { font-weight: var(--font-weight-extrabold); }
+
+/* ==============================================
+   RESET & BASE - TRANSPARENT BACKGROUND
+   ============================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background: transparent;
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: inherit;
+  background: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Typography Hierarchy - High Contrast for Transparency */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  margin-bottom: 2rem;
+  background: var(--gradient-red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 4px 4px 8px rgba(0,0,0,0.8);
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.9));
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: 1.5rem;
+  color: var(--color-secondary);
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: 1.25rem;
+  color: var(--color-accent);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+}
+
+h4, h5, h6 {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+p {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 1.25rem;
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+}
+
+small {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-normal);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* ==============================================
+   LAYOUT - ULTRA TRANSPARENT CONTAINERS
+   ============================================== */
+.stApp {
+  min-height: 100vh;
+  background: var(--background-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  font-family: var(--font-secondary);
+}
+
+/* NO overlay - pure transparency */
+.stApp::before {
+  display: none;
+}
+
+.stApp > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ultra transparent main containers */
+.stMainBlockContainer {
+  background: rgba(0, 0, 0, 0.02) !important;
+  backdrop-filter: blur(1px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: var(--radius-lg) !important;
+  margin: 0.5rem !important;
+  padding: 1.5rem !important;
+  box-shadow: none !important;
+}
+
+.stMain {
+  background: transparent !important;
+  padding: 0.5rem !important;
+  font-family: var(--font-secondary) !important;
+}
+
+.stVerticalBlock {
+  background: transparent !important;
+  padding: 0.5rem !important;
+  font-family: var(--font-secondary) !important;
+}
+
+/* ==============================================
+   SIDEBAR - MINIMAL TRANSPARENCY
+   ============================================== */
+.stSidebar {
+  width: 300px !important;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3px) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
+  font-family: var(--font-primary);
+}
+
+.stSidebar [data-testid="stLogoSpacer"] {
+  height: 80px !important;
+  margin: 1rem !important;
+  background: url('https://storage.googleapis.com/public-static-contents-test-0/logo_sc_photo_background.jpeg') center/contain no-repeat !important;
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.stSidebar [data-testid="stNavSectionHeader"] {
+  color: var(--color-text-muted) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-widest) !important;
+  padding: 1.5rem 1.5rem 0.75rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+.stSidebar [data-testid="stNavSectionHeader"]::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -1px !important;
+  left: 1.5rem !important;
+  right: 1.5rem !important;
+  height: 2px !important;
+  background: var(--gradient-red) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.stSidebar [data-testid="stSidebarNavLink"] {
+  display: flex !important;
+  align-items: center !important;
+  padding: 1rem 1.5rem !important;
+  margin: 0.5rem 1rem !important;
+  color: var(--color-text) !important;
+  border-radius: var(--radius-lg) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-medium) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid transparent !important;
+  transition: var(--transition-med) !important;
+  cursor: pointer !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+.stSidebar [data-testid="stSidebarNavLink"]:hover {
+  background: rgba(220, 38, 38, 0.1) !important;
+  border: 1px solid rgba(220, 38, 38, 0.3) !important;
+  transform: translateX(8px) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.stSidebar [aria-current="page"] {
+  background: rgba(220, 38, 38, 0.15) !important;
+  border: 1px solid rgba(220, 38, 38, 0.4) !important;
+  box-shadow: var(--shadow-red) !important;
+  color: var(--color-text-dark) !important;
+  font-weight: var(--font-weight-bold) !important;
+}
+
+/* ==============================================
+   HEADER - MINIMAL OVERLAY
+   ============================================== */
+.stAppHeader {
+  background: rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: blur(2px) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.stAppToolbar {
+  padding: 1.5rem 2rem !important;
+}
+
+.stAppToolbar::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 2rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url('https://storage.googleapis.com/public-static-contents-test-0/logo_sc_photo_background.jpeg') center/contain no-repeat !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  z-index: 1 !important;
+}
+
+.rc-overflow {
+  flex: 1 !important;
+  display: flex !important;
+  gap: 1rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 80px 0 400px !important;
+  font-family: var(--font-primary) !important;
+}
+
+.rc-overflow > * {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding: 0.5rem 1.0rem !important;
+  border-radius: var(--radius-lg) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-medium) !important;
+  color: var(--color-text) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+  cursor: pointer !important;
+  transition: var(--transition-med) !important;
+  backdrop-filter: blur(3px) !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+.rc-overflow > *:hover {
+  background: rgba(220, 38, 38, 0.2) !important;
+  border: 1px solid rgba(220, 38, 38, 0.4) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* ==============================================
+   FORMS - GLASS EFFECT
+   ============================================== */
+.stForm {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-xl) !important;
+  padding: 2.5rem !important;
+  margin: 2rem 0 !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.stTextInput label,
+.stTextArea label,
+.stSelectbox label {
+  color: var(--color-text) !important;
+  font-family: var(--font-primary) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  font-size: var(--font-size-lg) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+  margin-bottom: 0.75rem !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important;
+}
+
+.stTextInput input,
+.stTextArea textarea,
+.stSelectbox select {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: var(--radius-lg) !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-secondary) !important;
+  font-size: var(--font-size-base) !important;
+  padding: 1rem 1.25rem !important;
+  transition: var(--transition-med) !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus,
+.stSelectbox select:focus {
+  outline: none !important;
+  border-color: rgba(220, 38, 38, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.stFormSubmitButton button {
+  background: var(--gradient-red) !important;
+  color: var(--color-text-dark) !important;
+  padding: 1.25rem 2.5rem !important;
+  border-radius: var(--radius-lg) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: var(--transition-med) !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+.stFormSubmitButton button:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-lg) !important;
+  background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+}
+
+/* ==============================================
+   BUTTONS - ENHANCED VISIBILITY
+   ============================================== */
+.stButton button {
+  background: var(--gradient-red) !important;
+  color: var(--color-text-dark) !important;
+  border: none !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 0.875rem 2rem !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+  cursor: pointer !important;
+  transition: var(--transition-med) !important;
+  box-shadow: var(--shadow-sm) !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+.stButton button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+  background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+}
+
+/* ==============================================
+   ALERTS - GLASS EFFECT
+   ============================================== */
+.stAlert,
+.stAlertContainer {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1.5rem !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.stAlert p,
+.stAlertContainer p {
+  color: var(--color-text) !important;
+  font-family: var(--font-secondary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-medium) !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important;
+}
+
+/* Success alerts - Green tint */
+.stSuccess {
+  background: rgba(34, 197, 94, 0.1) !important;
+  border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Warning alerts - Yellow tint */
+.stWarning {
+  background: rgba(245, 158, 11, 0.1) !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Error alerts - Red tint */
+.stError {
+  background: rgba(220, 38, 38, 0.1) !important;
+  border-color: rgba(220, 38, 38, 0.3) !important;
+}
+
+/* Info alerts - Blue tint */
+.stInfo {
+  background: rgba(59, 130, 246, 0.1) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* ==============================================
+   METRICS - ENHANCED VISIBILITY
+   ============================================== */
+.stMetric {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1.5rem !important;
+  text-align: center !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.stMetric label {
+  color: var(--color-text-muted) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wider) !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+.stMetric [data-testid="metric-value"] {
+  color: var(--color-primary) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-3xl) !important;
+  font-weight: var(--font-weight-normal) !important;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.8) !important;
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.9));
+}
+
+/* ==============================================
+   RESPONSIVE DESIGN
+   ============================================== */
+@media (max-width: 1024px) {
+  .rc-overflow {
+    margin: 0 40px 0 200px !important;
+    gap: 0.5rem !important;
+  }
+
+  .stSidebar {
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-5xl: 3rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-base: 1.125rem;
+  }
+
+  .stApp {
+    background-attachment: scroll !important;
+  }
+
+  .stMainBlockContainer {
+    margin: 0.25rem !important;
+    padding: 1rem !important;
+  }
+
+  .rc-overflow {
+    margin: 0 20px 0 80px !important;
+    flex-wrap: wrap !important;
+    gap: 0.25rem !important;
+  }
+
+  .stSidebar {
+    width: 220px !important;
+  }
+
+  .stAppToolbar::before {
+    left: auto !important;
+    right: 1rem !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --font-size-5xl: 2.5rem;
+    --font-size-4xl: 2rem;
+    --font-size-3xl: 1.75rem;
+    --font-size-base: 1rem;
+  }
+
+  .stMainBlockContainer {
+    margin: 0.125rem !important;
+    padding: 0.75rem !important;
+  }
+
+  .stForm {
+    padding: 1.5rem !important;
+  }
+}
+
+/* ==============================================
+   HIDE STREAMLIT ELEMENTS
+   ============================================== */
+.stToolbarActions,
+.stAppDeployButton,
+.stMainMenu,
+.stElementToolbar,
+[data-testid="stElementToolbar"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* ==============================================
+   ENHANCED TEXT SHADOWS FOR MAXIMUM READABILITY
+   ============================================== */
+p, h1, h2, h3, h4, h5, h6,
+.stMarkdown p,
+.stMarkdown h1,
+.stMarkdown h2,
+.stMarkdown h3,
+.stMarkdown h4,
+.stMarkdown h5,
+.stMarkdown h6,
+.stMarkdown li,
+.stMarkdown span,
+a[data-testid="stSidebarNavLink"] * {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+  font-family: var(--font-secondary) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.stMarkdown h1,
+.stMarkdown h2,
+.stMarkdown h3,
+.stMarkdown h4,
+.stMarkdown h5,
+.stMarkdown h6,
+div[data-testid="stMarkdownContainer"] {
+  font-family: var(--font-primary) !important;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Strong text shadows for any text over transparent backgrounds */
+* {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* ==============================================
+   SPECIAL EFFECTS
+   ============================================== */
+.glass-ultra {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(2px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.neon-glow {
+  box-shadow:
+    0 0 10px rgba(220, 38, 38, 0.3),
+    0 0 20px rgba(220, 38, 38, 0.2),
+    0 0 30px rgba(220, 38, 38, 0.1) !important;
+}
+
+.pulse {
+  animation: pulse 2s infinite !important;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.3);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.5);
+}
+
+a[data-testid="stSidebarNavLink"],
+div[data-testid="stTopNavSection"]
+{
+    font-family: var(--font-primary) !important;
+}
+
+* {
+    color: #ffffff !important;
+}
+
+/* All text elements */
+body, html, div, span, p, a, h1, h2, h3, h4, h5, h6,
+ul, ol, li, dl, dt, dd, blockquote, pre, code,
+table, th, td, caption, form, fieldset, legend,
+input, textarea, select, option, button, label {
+    color: #ffffff !important;
+}
+
