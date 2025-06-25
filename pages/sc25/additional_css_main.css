@@ -1,0 +1,236 @@
+/* ==============================================
+   MAIN CONTENT & LAYOUT STYLING
+   ============================================== */
+
+/* ==============================================
+   BLACK SHADED THEME WITH BACKGROUND IMAGE
+   ============================================== */
+
+/* Background Image Setup */
+body, .stApp {
+  background-image: var(--background-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Main content overlay */
+.stApp {
+  background: var(--background-image), var(--bg-gradient-primary) !important;
+  background-size: cover, auto !important;
+  background-position: center, center !important;
+  background-attachment: fixed, scroll !important;
+  background-repeat: no-repeat, no-repeat !important;
+  backdrop-filter: blur(1px) !important;
+}
+
+/* Enhanced Typography with larger fonts and more letter spacing */
+html {
+  font-size: var(--font-size-base) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+body, p, div, span, label {
+  font-size: var(--font-size-base) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: var(--letter-spacing-wide) !important;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  text-align: center;
+}
+
+/* Main content area with glass effect */
+.stMainBlockContainer {
+  background: rgba(0,0,0,0.7) !important;
+  backdrop-filter: blur(3px) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+.stMain {
+  background: rgba(0,0,0,0.5) !important;
+  backdrop-filter: blur(2px) !important;
+}
+
+/* Form elements with enhanced typography */
+.stForm {
+  background: rgba(0,0,0,0.8) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
+}
+
+.stTextInput label {
+  font-size: var(--font-size-lg) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+.stTextInput input {
+  font-size: var(--font-size-base) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+  background: rgba(0,0,0,0.6) !important;
+  backdrop-filter: blur(3px) !important;
+  color: var(--color-text) !important;
+}
+
+.stFormSubmitButton button {
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important;
+  font-size: var(--font-size-lg) !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+}
+
+.stFormSubmitButton button:hover {
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4) !important;
+  background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+}
+
+/* Alert containers */
+.stAlertContainer {
+  background: rgba(0,0,0,0.8) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(220, 38, 38, 0.3) !important;
+}
+
+.stAlertContainer p {
+  font-size: var(--font-size-base) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+/* Headings with enhanced spacing */
+.stHeading h1 {
+  font-size: var(--font-size-5xl) !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+}
+
+/* Enhanced shadows to match black theme */
+.shadow-sm { box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
+.shadow-md { box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important; }
+.shadow-indigo { box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important; }
+
+/* AGGRESSIVE FULL-WIDTH - NO MARGINS */
+.stApp,
+.stMain,
+.stMainBlockContainer,
+.stVerticalBlock,
+.stForm,
+.stAlertContainer,
+.stAppEmbeddingId-sydrjgxn657a,
+.st-ae {
+  margin: 10 !important;
+  padding: 0.5rem 0.25rem !important;  /* Minimal padding for readability */
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Only keep minimal padding for text readability */
+.stMainBlockContainer {
+  padding: 1rem 0.5rem !important;
+}
+
+/* ==============================================
+   HIDE STREAMLIT ELEMENT TOOLBAR
+   ============================================== */
+
+/* Hide the element toolbar completely */
+.stElementToolbar {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Alternative selector if the above doesn't work */
+[data-testid="stElementToolbar"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide toolbar buttons specifically */
+.stElementToolbarButton {
+  display: none !important;
+}
+
+/* Hide any floating action buttons */
+.element-container .stElementToolbar,
+.stPlotlyChart .stElementToolbar,
+.stDataFrame .stElementToolbar {
+  display: none !important;
+}
+
+/* ==============================================
+   INCREASED TRANSPARENCY FOR BACKGROUND VISIBILITY
+   ============================================== */
+
+/* Main App Container - More Transparent */
+.stApp {
+  background: rgba(15, 23, 42, 0.3) !important; /* Very transparent */
+}
+
+/* Main Content Areas - Highly Transparent */
+.stMain {
+  background: rgba(17, 24, 39, 0.2) !important; /* Very transparent */
+  backdrop-filter: blur(2px) !important; /* Light blur for readability */
+}
+
+.stMainBlockContainer {
+  background: rgba(15, 23, 42, 0.25) !important; /* Very transparent */
+  backdrop-filter: blur(3px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Subtle border */
+}
+
+/* Container Elements - More Transparent */
+.stAppEmbeddingId-sydrjgxn657a,
+.st-ae {
+  background: rgba(15, 23, 42, 0.3) !important;
+  backdrop-filter: blur(3px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.stVerticalBlock {
+  background: rgba(0, 0, 0, 0.1) !important; /* Very light overlay */
+}
+
+/* Form Elements - Transparent but Readable */
+.stForm {
+  background: rgba(15, 23, 42, 0.4) !important; /* Slightly more opaque for readability */
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Alert Containers - Transparent */
+.stAlertContainer {
+  background: rgba(17, 24, 39, 0.4) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(236, 72, 153, 0.3) !important;
+}
+
+/* Text Input Backgrounds - Semi-transparent */
+.stTextInput input {
+  background: rgba(15, 23, 42, 0.6) !important;
+  backdrop-filter: blur(3px) !important;
+  color: #f8fafc !important;
+}
+
+/* Ensure text remains readable with semi-transparent backgrounds */
+.stTextInput label {
+  color: #f8fafc !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Add text shadow to improve readability on transparent backgrounds */
+p, h1, h2, h3, h4, h5, h6 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+
+/* Ultra Transparent Version - Use with Caution */
+/* This makes containers almost invisible - only use if background image is not too busy */
+
+.stMainBlockContainer,
+.stMain,
+.stVerticalBlock {
+  background: rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: blur(1px) !important;
+}
+

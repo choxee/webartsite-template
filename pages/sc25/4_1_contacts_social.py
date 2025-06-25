@@ -16,47 +16,27 @@ st.markdown("---")
 # Social Media Principali
 st.header("📱 I Nostri Social Media")
 
-st.write("**Seguici sui nostri canali ufficiali** per restare sempre aggiornato!")
+social_col1, social_col2, social_col3 = st.columns((1, 1, 1))
 
-# Instagram
-st.subheader("Contatti")
-instagram_col1, instagram_col2 = st.columns(2)
+with social_col1:
 
-with instagram_col1:
-    st.markdown("""
-    **ass.cult.onda@gmail.com**
-    """)
-
-    st.markdown("""
+    st.subheader("""
     **[Instagram](https://www.instagram.com/stradachiusa/)**
-
     """)
-    st.markdown("""
+
+with social_col2:
+
+    st.subheader("""
     **[Facebook](https://www.facebook.com/stradachiusablockparty/?locale=it_IT)**
-
     """)
-    st.markdown("""
+
+with social_col3:
+
+    st.subheader("""
     **[Youtube](https://www.youtube.com/@londa280)**
-
     """)
-    #
-    # Il nostro canale principale per:
-    # - 📸 **Foto esclusive** dai backstage
-    # - 📹 **Stories** in tempo reale durante gli eventi
-    # - 🎨 **Artwork** e contenuti creativi
-    # - 📢 **Annunci** in anteprima
-    # - 🎵 **Playlist** e raccomandazioni musicali
-# with instagram_col2:
-#     st.info("""
-#     **🔥 Contenuti che trovi:**
-#     - Preparativi e allestimenti
-#     - Performance degli artisti
-#     - Opere dei graffiti artist
-#     - Momenti della community
-#     - Dietro le quinte dell'organizzazione
-#
-#     **👀 Stories highlights** con i momenti migliori di ogni edizione!
-#     """)
+
+st.subheader("**Seguici sui nostri canali ufficiali** per restare sempre aggiornato!")
 
 st.markdown("---")
 
@@ -100,7 +80,7 @@ st.markdown("---")
 # Modulo di Contatto
 st.header("📝 Contattaci Direttamente")
 
-st.write("**Compila il modulo qui sotto** e ti risponderemo il prima possibile:")
+st.subheader("**Compila il modulo qui sotto** e ti risponderemo il prima possibile:")
 
 with st.form("contact_form"):
     contact_col1, contact_col2 = st.columns(2)

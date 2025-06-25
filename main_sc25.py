@@ -199,6 +199,86 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 999999 !important;
 }
 
+/* Add title at top of sidebar - above all navigation content */
+.stSidebar > div:first-child::before {
+  content: "STRADA CHIUSA 2025" !important;
+  display: block !important;
+  padding: 1.5rem 1.5rem 1rem !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-2xl) !important;
+  font-weight: var(--font-weight-bold) !important;
+  color: var(--color-text) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+  text-align: center !important;
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.9)) !important;
+  border-bottom: 2px solid rgba(220, 38, 38, 0.3) !important;
+  margin-bottom: 1rem !important;
+  position: sticky !important;
+  top: 0 !important;
+  background-color: rgba(0,0,0,0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 10 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.stSidebar > div:first-child::before:hover {
+  filter: drop-shadow(3px 3px 6px rgba(220, 38, 38, 0.8)) !important;
+  transform: scale(1.02) !important;
+}
+
+/* Alternative approach - target the sidebar header area for close button row */
+.stSidebar [data-testid="stSidebarHeader"]::after {
+  content: "NASCONDI" !important;
+  display: block !important;
+  padding: 1rem 1.5rem 0.75rem !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-bold) !important;
+  color: var(--color-text) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+  text-align: center !important;
+  background: linear-gradient(90deg, #666666, #888888, #aaaaaa) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.9)) !important;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.2) !important;
+  margin-bottom: 0.5rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.stSidebar [data-testid="stSidebarHeader"]::after:hover {
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(3px 3px 6px rgba(220, 38, 38, 0.8)) !important;
+  transform: scale(1.02) !important;
+}
+
+/* Show sidebar title on mobile/tablet when hamburger menu appears */
+@media (max-width: 768px) {
+  .stSidebar > div:first-child::before,
+  .stSidebar [data-testid="stSidebarHeader"]::after {
+    display: block !important;
+  }
+}
+
+/* Hide sidebar title on desktop when sidebar is always visible */
+@media (min-width: 769px) {
+  .stSidebar > div:first-child::before,
+  .stSidebar [data-testid="stSidebarHeader"]::after {
+    display: none !important;
+  }
+}
+
 /* Sidebar content wrapper - ensure proper scrolling */
 .stSidebar > div {
   height: 100% !important;
@@ -594,6 +674,75 @@ div[data-testid="stTopNavSection"]:hover {
  position: relative !important;
 }
 
+/* ==============================================
+   TITLE IN TOPBAR AND SIDEBAR
+   ============================================== */
+
+/* Add title to topbar - always centered */
+.stAppToolbar::after {
+  content: "STRADA CHIUSA 2025" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-xl) !important;
+  font-weight: var(--font-weight-bold) !important;
+  color: var(--color-text) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+  z-index: 1 !important;
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.9)) !important;
+  white-space: nowrap !important;
+  pointer-events: none !important; /* Ensures it doesn't interfere with buttons */
+}
+
+/* Hide title when sidebar is visible (desktop) - show only when hamburger menu appears */
+@media (max-width: 768px) {
+  .stAppToolbar::after {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .stAppToolbar::after {
+    display: none !important;
+  }
+}
+
+/* Hide topbar navigation buttons when title is shown to avoid overlap */
+@media (max-width: 768px) {
+  .rc-overflow {
+    display: none !important;
+  }
+
+  /* Ensure hamburger/sidebar button remains visible and accessible */
+  .stAppHeader .stMainMenu,
+  .stAppHeader [data-testid="stMainMenu"],
+  .stAppHeader button[kind="header"] {
+    display: block !important;
+    z-index: 10 !important;
+    position: relative !important;
+  }
+}
+
+/* Add JavaScript-like click functionality through CSS */
+.stAppToolbar::after {
+  cursor: pointer !important;
+  pointer-events: auto !important; /* Enable clicking */
+}
+
+.stAppToolbar::after:hover {
+  filter: drop-shadow(2px 2px 4px rgba(220, 38, 38, 0.8)) !important;
+  transform: translate(-50%, -50%) scale(1.02) !important;
+  transition: all 0.2s ease !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
 margin-left: 3rem;
 margin-right: 3rem;
@@ -624,6 +773,29 @@ margin-right: 3rem;
     --font-size-base: 1.25rem !important;
   }
 
+  /* Reduce topbar height on mobile */
+  .stAppHeader {
+    min-height: 60px !important; /* Reduced from 120px */
+  }
+
+  .stAppToolbar {
+    padding: 0.75rem 1rem !important; /* Reduced from 2rem 2rem */
+  }
+
+  /* Mobile topbar title adjustments */
+  .stAppToolbar::after {
+    font-size: var(--font-size-lg) !important; /* Smaller on mobile */
+    letter-spacing: var(--letter-spacing-normal) !important;
+  }
+
+  /* Mobile button positioning - buttons hidden, only hamburger visible */
+
+  .stAppToolbar::before {
+    top: calc(50% + 0.125rem) !important; /* Adjusted for smaller height */
+    width: 35px !important; /* Slightly smaller logo */
+    height: 35px !important;
+  }
+
   /* Mobile sidebar optimizations */
   .stSidebar {
     width: 100vw !important;
@@ -638,6 +810,7 @@ margin-right: 3rem;
     -webkit-overflow-scrolling: touch !important;
     transform: translateX(-100%) !important;
     transition: transform 0.3s ease-in-out !important;
+    padding-top: 80px !important; /* Extra vertical space at top for mobile */
   }
 
   /* When sidebar is open on mobile */
@@ -653,6 +826,12 @@ margin-right: 3rem;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
     padding-bottom: 3rem !important;
+    padding-top: 2rem !important; /* Additional top padding for mobile content */
+  }
+
+  /* First navigation section gets extra top margin on mobile */
+  .stSidebar [data-testid="stSidebarUserContent"] > div:first-child {
+    margin-top: 1.5rem !important;
   }
 
   /* Mobile navigation links - larger touch targets */
@@ -709,8 +888,8 @@ margin-right: 3rem;
   .stAppToolbar::before {
     left: auto !important;
     right: 1rem !important;
-    width: 40px !important;
-    height: 40px !important;
+    width: 30px !important; /* Further reduced for small screens */
+    height: 30px !important;
   }
 
   /* Mobile hamburger menu visibility */
@@ -741,9 +920,26 @@ margin-right: 3rem;
     padding: 1.5rem !important;
   }
 
-  /* Extra small screens - full width sidebar */
+  /* Mobile topbar title - even smaller on very small screens */
+  .stAppToolbar::after {
+    font-size: var(--font-size-base) !important;
+  }
+
+  /* Extra small screens - full width sidebar with more top space */
   .stSidebar {
     width: 100vw !important;
+    padding-top: 100px !important; /* Even more top space for very small screens */
+  }
+
+  /* Sidebar title smaller on very small screens */
+  .stSidebar::before {
+    font-size: var(--font-size-xl) !important;
+    padding: 1rem 1rem 0.75rem !important;
+  }
+
+  /* First content section gets extra spacing */
+  .stSidebar [data-testid="stSidebarUserContent"] > div:first-child {
+    margin-top: 2rem !important;
   }
 
   /* Larger touch targets for very small screens */
@@ -814,6 +1010,7 @@ margin-right: 3rem;
   }
 }
 
+
 """
 
     final_css += additional_css
@@ -860,4 +1057,367 @@ pages = {
 }
 
 pg = st.navigation(pages, position="top")
+
+# Add JavaScript for sidebar auto-close targeting the double arrow button
+st.markdown("""
+<script>
+// Function to navigate to home page when title is clicked
+function navigateToHome() {
+    if (window.parent && window.parent.location) {
+        window.parent.location.href = window.parent.location.origin + window.parent.location.pathname;
+    } else {
+        window.location.href = window.location.origin + window.location.pathname;
+    }
+}
+
+// Function to find and click the double arrow close button
+function clickDoubleArrowButton() {
+    console.log('Looking for double arrow close button...');
+
+    // Look for buttons that might contain double arrows or collapse functionality
+    const potentialButtons = document.querySelectorAll('button, [role="button"]');
+
+    for (let button of potentialButtons) {
+        // Check if button is in the sidebar area
+        const isInSidebar = button.closest('[data-testid="stSidebar"]') || 
+                           button.closest('.stSidebar') ||
+                           button.closest('[data-testid="stSidebarHeader"]');
+
+        if (!isInSidebar) continue;
+
+        // Check button content for double arrows or collapse indicators
+        const buttonText = button.textContent || '';
+        const buttonHTML = button.innerHTML || '';
+        const ariaLabel = button.getAttribute('aria-label') || '';
+        const title = button.getAttribute('title') || '';
+
+        // Look for double arrow patterns
+        const hasDoubleArrow = 
+            buttonText.includes('«') || buttonText.includes('»') ||
+            buttonText.includes('<<') || buttonText.includes('>>') ||
+            buttonText.includes('‹‹') || buttonText.includes('››') ||
+            buttonHTML.includes('&#x') || // Unicode arrows
+            buttonHTML.includes('&lt;&lt;') || buttonHTML.includes('&gt;&gt;') ||
+            ariaLabel.toLowerCase().includes('collapse') ||
+            ariaLabel.toLowerCase().includes('close') ||
+            title.toLowerCase().includes('collapse') ||
+            title.toLowerCase().includes('close');
+
+        // Check for specific Streamlit close button classes or data attributes
+        const hasCloseIndicators = 
+            button.getAttribute('data-testid') === 'stSidebarCollapseButton' ||
+            button.className.includes('collapse') ||
+            button.className.includes('close') ||
+            button.getAttribute('kind') === 'secondary';
+
+        if (hasDoubleArrow || hasCloseIndicators) {
+            console.log('Found potential double arrow button:', {
+                element: button,
+                text: buttonText,
+                html: buttonHTML,
+                ariaLabel: ariaLabel,
+                title: title,
+                classes: button.className,
+                testId: button.getAttribute('data-testid')
+            });
+
+            try {
+                // Try multiple ways to click the button
+                button.click();
+                console.log('Successfully clicked double arrow button!');
+                return true;
+            } catch (e) {
+                console.log('Direct click failed, trying events:', e);
+
+                // Try mouse events
+                try {
+                    button.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+                    button.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
+                    button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+                    console.log('Successfully triggered mouse events!');
+                    return true;
+                } catch (e2) {
+                    console.log('Mouse events failed:', e2);
+                }
+            }
+        }
+    }
+
+    console.log('Could not find double arrow close button');
+    return false;
+}
+
+// Enhanced navigation click detection with auto-close
+function setupNavigationAutoClose() {
+    console.log('Setting up navigation auto-close...');
+
+    // Use event delegation on document to catch all clicks
+    document.addEventListener('click', function(e) {
+        // Only process on mobile
+        if (window.innerWidth > 768) return;
+
+        // Check if click is in sidebar
+        const sidebar = e.target.closest('[data-testid="stSidebar"], .stSidebar');
+        if (!sidebar) return;
+
+        // Ignore clicks on our custom titles
+        if (e.target.closest('.custom-sidebar-title, .custom-sidebar-header-title')) return;
+
+        // Ignore clicks on the close button itself
+        const isCloseButton = e.target.closest('button, [role="button"]');
+        if (isCloseButton) {
+            const buttonText = isCloseButton.textContent || '';
+            const buttonHTML = isCloseButton.innerHTML || '';
+            const ariaLabel = isCloseButton.getAttribute('aria-label') || '';
+
+            // If it's the close button, don't auto-close (let it work normally)
+            if (buttonText.includes('«') || buttonText.includes('»') ||
+                buttonHTML.includes('&#x') ||
+                ariaLabel.toLowerCase().includes('collapse') ||
+                ariaLabel.toLowerCase().includes('close')) {
+                console.log('Close button clicked, not auto-closing');
+                return;
+            }
+        }
+
+        // Check if clicked element is a navigation link
+        const navLink = e.target.closest('a[href], [role="button"], button');
+        if (!navLink) return;
+
+        // Make sure it's actually a navigation item, not other sidebar elements
+        const isNavigation = 
+            navLink.closest('[data-testid="stSidebarNavItems"]') ||
+            navLink.closest('[data-testid="stSidebarUserContent"]') ||
+            (navLink.tagName === 'A' && navLink.getAttribute('href'));
+
+        if (isNavigation) {
+            console.log('Navigation link clicked:', navLink);
+            console.log('Will auto-close sidebar in 300ms...');
+
+            // Delay to allow navigation to start, then close sidebar
+            setTimeout(function() {
+                console.log('Attempting to close sidebar...');
+                clickDoubleArrowButton();
+            }, 300);
+        }
+    }, true); // Use capture phase to catch events early
+}
+
+// Add titles and functionality
+function addSidebarTitle() {
+    const sidebar = document.querySelector('.stSidebar');
+    const sidebarFirstChild = document.querySelector('.stSidebar > div:first-child');
+
+    if (sidebar && sidebarFirstChild && !document.querySelector('.custom-sidebar-title')) {
+        const titleElement = document.createElement('div');
+        titleElement.className = 'custom-sidebar-title';
+        titleElement.innerHTML = 'STRADA CHIUSA 2025';
+        titleElement.style.cssText = `
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 100 !important;
+            padding: 1.5rem 1.5rem 1rem !important;
+            font-family: "Bebas Neue", sans-serif !important;
+            font-size: 1.875rem !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.075em !important;
+            text-align: center !important;
+            background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.9)) !important;
+            border-bottom: 2px solid rgba(220, 38, 38, 0.3) !important;
+            margin-bottom: 1rem !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            background-color: rgba(0,0,0,0.9) !important;
+            backdrop-filter: blur(10px) !important;
+        `;
+
+        titleElement.addEventListener('click', function() {
+            navigateToHome();
+            if (window.innerWidth <= 768) {
+                setTimeout(clickDoubleArrowButton, 200);
+            }
+        });
+
+        titleElement.addEventListener('mouseover', function() {
+            this.style.filter = 'drop-shadow(3px 3px 6px rgba(220, 38, 38, 0.8))';
+            this.style.transform = 'scale(1.02)';
+        });
+        titleElement.addEventListener('mouseout', function() {
+            this.style.filter = 'drop-shadow(2px 2px 4px rgba(0,0,0,0.9))';
+            this.style.transform = 'scale(1)';
+        });
+
+        sidebarFirstChild.insertBefore(titleElement, sidebarFirstChild.firstChild);
+    }
+}
+
+function addSidebarHeaderTitle() {
+    const sidebarHeader = document.querySelector('[data-testid="stSidebarHeader"]');
+
+    if (sidebarHeader && !document.querySelector('.custom-sidebar-header-title')) {
+        const titleElement = document.createElement('div');
+        titleElement.className = 'custom-sidebar-header-title';
+        titleElement.innerHTML = 'NASCONDI';
+        titleElement.style.cssText = `
+            padding: 0.5rem 1rem !important;
+            font-family: "Bebas Neue", sans-serif !important;
+            font-size: 1.2rem !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.075em !important;
+            text-align: center !important;
+            background: linear-gradient(90deg, #666666, #888888, #aaaaaa) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.9)) !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            margin-left: 1rem !important;
+            display: inline-block !important;
+        `;
+
+        titleElement.addEventListener('click', clickDoubleArrowButton);
+
+        titleElement.addEventListener('mouseover', function() {
+            this.style.background = 'linear-gradient(90deg, #dc2626, #ef4444, #f87171)';
+            this.style.filter = 'drop-shadow(3px 3px 6px rgba(220, 38, 38, 0.8))';
+            this.style.transform = 'scale(1.05)';
+        });
+        titleElement.addEventListener('mouseout', function() {
+            this.style.background = 'linear-gradient(90deg, #666666, #888888, #aaaaaa)';
+            this.style.filter = 'drop-shadow(2px 2px 4px rgba(0,0,0,0.9))';
+            this.style.transform = 'scale(1)';
+        });
+
+        sidebarHeader.appendChild(titleElement);
+    }
+}
+
+// Make close button row sticky and always visible
+function makeCloseRowSticky() {
+    const sidebarHeader = document.querySelector('[data-testid="stSidebarHeader"]');
+    if (!sidebarHeader) return;
+
+    sidebarHeader.style.cssText += `
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        background: rgba(0,0,0,0.9) !important;
+        backdrop-filter: blur(10px) !important;
+        border-bottom: 2px solid rgba(220, 38, 38, 0.3) !important;
+        padding: 1rem !important;
+        margin-bottom: 1rem !important;
+    `;
+}
+
+// Enhanced topbar title click detection
+document.addEventListener('click', function(e) {
+    const toolbar = document.querySelector('.stAppToolbar');
+
+    if (toolbar && e.target.closest('.stAppToolbar')) {
+        const rect = toolbar.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        if (Math.abs(e.clientX - centerX) < 120 && Math.abs(e.clientY - centerY) < 25) {
+            navigateToHome();
+        }
+    }
+});
+
+// Debug function to examine all buttons in sidebar
+function debugSidebarButtons() {
+    console.log('=== SIDEBAR BUTTONS DEBUG ===');
+
+    const allButtons = document.querySelectorAll('button, [role="button"]');
+    const sidebarButtons = Array.from(allButtons).filter(btn => 
+        btn.closest('[data-testid="stSidebar"]') || btn.closest('.stSidebar')
+    );
+
+    console.log(`Found ${sidebarButtons.length} buttons in sidebar:`);
+
+    sidebarButtons.forEach((btn, index) => {
+        console.log(`Button ${index + 1}:`, {
+            element: btn,
+            text: btn.textContent?.trim(),
+            innerHTML: btn.innerHTML,
+            ariaLabel: btn.getAttribute('aria-label'),
+            title: btn.getAttribute('title'),
+            className: btn.className,
+            testId: btn.getAttribute('data-testid'),
+            kind: btn.getAttribute('kind'),
+            position: {
+                top: btn.getBoundingClientRect().top,
+                left: btn.getBoundingClientRect().left
+            }
+        });
+    });
+
+    console.log('==============================');
+}
+
+// Main initialization
+function initializeSidebar() {
+    console.log('Initializing sidebar functionality...');
+
+    addSidebarTitle();
+    addSidebarHeaderTitle();
+    makeCloseRowSticky();
+    setupNavigationAutoClose();
+
+    // Run debug to see what buttons are available
+    setTimeout(debugSidebarButtons, 1000);
+}
+
+// Initialize when ready
+document.addEventListener('DOMContentLoaded', initializeSidebar);
+setTimeout(initializeSidebar, 1000);
+
+// Monitor for changes
+setInterval(function() {
+    if (window.innerWidth <= 768) {
+        addSidebarTitle();
+        addSidebarHeaderTitle();
+        makeCloseRowSticky();
+    }
+}, 3000);
+
+// MutationObserver for dynamic updates
+const observer = new MutationObserver(function(mutations) {
+    let shouldUpdate = false;
+
+    mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList') {
+            mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === 1 && node.querySelector && (
+                    node.querySelector('[data-testid="stSidebar"]') ||
+                    node.getAttribute('data-testid') === 'stSidebar'
+                )) {
+                    shouldUpdate = true;
+                }
+            });
+        }
+    });
+
+    if (shouldUpdate) {
+        console.log('Detected sidebar changes, re-initializing...');
+        setTimeout(initializeSidebar, 300);
+    }
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script>
+""", unsafe_allow_html=True)
+
 pg.run()

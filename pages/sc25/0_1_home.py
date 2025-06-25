@@ -5,6 +5,10 @@ from webartsite.path_config import contents_path
 # Titolo principale
 # st.title("Strada Chiusa 2025")
 
+# Initialize sidebar state - collapsed by default
+if "sidebar_state" not in st.session_state:
+    st.session_state.sidebar_state = "collapsed"  # or "collapsed" if you want it closed by default
+
 st.markdown("---")
 
 # Call to Action principale
