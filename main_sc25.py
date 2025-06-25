@@ -182,12 +182,37 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: var(--letter-spacing-wide) !important;
 }
 
-/* Black shaded sidebar with glass effect */
+/* ==============================================
+   SIDEBAR - DESKTOP AND MOBILE OPTIMIZED
+   ============================================== */
+
+/* Desktop sidebar styling */
 .stSidebar {
   background: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(20,20,20,0.8)) !important;
   backdrop-filter: blur(10px) !important;
   border-right: 1px solid rgba(255,255,255,0.1) !important;
   box-shadow: 4px 0 20px rgba(0,0,0,0.5) !important;
+  position: fixed !important;
+  height: 100vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  z-index: 999999 !important;
+}
+
+/* Sidebar content wrapper - ensure proper scrolling */
+.stSidebar > div {
+  height: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important; /* iOS smooth scrolling */
+}
+
+/* Sidebar navigation container */
+.stSidebar [data-testid="stSidebarUserContent"] {
+  height: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding-bottom: 2rem !important; /* Extra space at bottom */
 }
 
 .stSidebar [data-testid$="Header"],
@@ -227,6 +252,24 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(220, 38, 38, 0.3) !important;
   border: 1px solid rgba(220, 38, 38, 0.5) !important;
   box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important;
+}
+
+/* Custom scrollbar for sidebar */
+.stSidebar::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.stSidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+.stSidebar::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.5) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.stSidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.7) !important;
 }
 
 /* Black shaded header with glass effect */
@@ -313,31 +356,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: var(--letter-spacing-wide) !important;
 }
 
-
-
 /* Enhanced shadows to match black theme */
 .shadow-sm { box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
 .shadow-md { box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important; }
 .shadow-indigo { box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important; }
-
-/* Responsive adjustments for larger fonts */
-@media (max-width: 768px) {
-  :root {
-    --font-size-5xl: 2.75rem !important;
-    --font-size-4xl: 2.25rem !important;
-    --font-size-3xl: 1.875rem !important;
-    --font-size-base: 1.25rem !important;
-  }
-}
-
-@media (max-width: 576px) {
-  :root {
-    --font-size-5xl: 2.25rem !important;
-    --font-size-4xl: 1.875rem !important;
-    --font-size-3xl: 1.5rem !important;
-    --font-size-base: 1.125rem !important;
-  }
-}
 
 /* AGGRESSIVE FULL-WIDTH - NO MARGINS */
 .stApp,
@@ -452,24 +474,6 @@ p, h1, h2, h3, h4, h5, h6 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Alternative - Even More Transparent Version */
-/* Uncomment these if you want maximum transparency */
-/*
-.stMainBlockContainer {
-  background: rgba(15, 23, 42, 0.15) !important;
-  backdrop-filter: blur(2px) !important;
-}
-
-.stMain {
-  background: rgba(17, 24, 39, 0.1) !important;
-  backdrop-filter: blur(1px) !important;
-}
-
-.stVerticalBlock {
-  background: transparent !important;
-}
-*/
-
 /* Ultra Transparent Version - Use with Caution */
 /* This makes containers almost invisible - only use if background image is not too busy */
 
@@ -574,14 +578,6 @@ div[data-testid="stTopNavSection"]:hover {
  margin-left: 15rem !important;
 }
 
-
- 
- /* Show hamburger menu or mobile nav trigger */
- .stAppHeader .stMainMenu {
-   display: block !important;
- }
-}
-
 /* Force topbar buttons centered from the start */
 .rc-overflow {
  position: absolute !important;
@@ -602,7 +598,220 @@ h1, h2, h3, h4, h5, h6 {
 margin-left: 3rem;
 margin-right: 3rem;
  text-align: center;
- 
+}
+
+/* ==============================================
+   MOBILE RESPONSIVE DESIGN - ENHANCED SIDEBAR
+   ============================================== */
+
+/* Tablet and mobile breakpoints */
+@media (max-width: 1024px) {
+  .rc-overflow {
+    margin: 0 40px 0 200px !important;
+    gap: 0.5rem !important;
+  }
+
+  .stSidebar {
+    width: 280px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-5xl: 2.75rem !important;
+    --font-size-4xl: 2.25rem !important;
+    --font-size-3xl: 1.875rem !important;
+    --font-size-base: 1.25rem !important;
+  }
+
+  /* Mobile sidebar optimizations */
+  .stSidebar {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important; /* Dynamic viewport height for mobile */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 999999 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease-in-out !important;
+  }
+
+  /* When sidebar is open on mobile */
+  .stSidebar[data-testid="stSidebar"][aria-expanded="true"],
+  .stSidebar.sidebar-expanded {
+    transform: translateX(0) !important;
+  }
+
+  /* Sidebar content on mobile */
+  .stSidebar > div {
+    height: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Mobile navigation links - larger touch targets */
+  .stSidebar [data-testid="stSidebarNavLink"] {
+    padding: 1.25rem 1.5rem !important;
+    margin: 0.75rem 1rem !important;
+    font-size: var(--font-size-lg) !important;
+    min-height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* Mobile section headers */
+  .stSidebar [data-testid="stNavSectionHeader"] {
+    padding: 1.5rem 1.5rem 1rem !important;
+    font-size: var(--font-size-base) !important;
+  }
+
+  /* Background overlay when sidebar is open */
+  .stSidebar::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: -1 !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease-in-out !important;
+  }
+
+  .stSidebar[aria-expanded="true"]::before,
+  .stSidebar.sidebar-expanded::before {
+    opacity: 1 !important;
+  }
+
+  /* Main content adjustments for mobile */
+  .stApp {
+    background-attachment: scroll !important;
+  }
+
+  .stMainBlockContainer {
+    margin: 0.25rem !important;
+    padding: 1rem !important;
+  }
+
+  .rc-overflow {
+    margin: 0 20px 0 80px !important;
+    flex-wrap: wrap !important;
+    gap: 0.25rem !important;
+  }
+
+  .stAppToolbar::before {
+    left: auto !important;
+    right: 1rem !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Mobile hamburger menu visibility */
+  .stAppHeader .stMainMenu {
+    display: block !important;
+  }
+
+  /* Ensure smooth scrolling on iOS */
+  body {
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --font-size-5xl: 2.5rem !important;
+    --font-size-4xl: 2rem !important;
+    --font-size-3xl: 1.75rem !important;
+    --font-size-base: 1rem !important;
+  }
+
+  .stMainBlockContainer {
+    margin: 0.125rem !important;
+    padding: 0.75rem !important;
+  }
+
+  .stForm {
+    padding: 1.5rem !important;
+  }
+
+  /* Extra small screens - full width sidebar */
+  .stSidebar {
+    width: 100vw !important;
+  }
+
+  /* Larger touch targets for very small screens */
+  .stSidebar [data-testid="stSidebarNavLink"] {
+    padding: 1.5rem 1.5rem !important;
+    margin: 1rem 1rem !important;
+    font-size: var(--font-size-lg) !important;
+    min-height: 60px !important;
+  }
+}
+
+/* ==============================================
+   SIDEBAR SCROLL ENHANCEMENTS FOR ALL DEVICES
+   ============================================== */
+
+/* Enhanced scrollbar for better mobile experience */
+.stSidebar {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(220, 38, 38, 0.5) rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Webkit scrollbar for mobile browsers */
+.stSidebar::-webkit-scrollbar {
+  width: 8px !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.stSidebar::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.6) !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.stSidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.8) !important;
+}
+
+.stSidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+/* Ensure sidebar content doesn't get cut off */
+.stSidebar [data-testid="stSidebarUserContent"] {
+  min-height: 100vh !important;
+  padding-bottom: 4rem !important;
+}
+
+/* Force scroll behavior */
+.stSidebar,
+.stSidebar > div,
+.stSidebar [data-testid="stSidebarUserContent"] {
+  scroll-behavior: smooth !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .stSidebar {
+    -webkit-overflow-scrolling: touch !important;
+    transform: translate3d(0, 0, 0) !important; /* Hardware acceleration */
+  }
+
+  .stSidebar > div {
+    -webkit-overflow-scrolling: touch !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
 }
 
 """
