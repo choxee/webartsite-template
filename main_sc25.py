@@ -574,17 +574,7 @@ div[data-testid="stTopNavSection"]:hover {
  margin-left: 15rem !important;
 }
 
-/* Activate sidebar sooner */
-@media (max-width: 3000px) {
- .stApp {
-   padding-left: 0 !important;
- }
- 
- .stSidebar {
-   transform: translateX(-100%) !important;
-   position: fixed !important;
-   z-index: 999999 !important;
- }
+
  
  /* Show hamburger menu or mobile nav trigger */
  .stAppHeader .stMainMenu {
@@ -609,8 +599,8 @@ div[data-testid="stTopNavSection"]:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-left: 3rem;
-  margin-right: 3rem;
+margin-left: 3rem;
+margin-right: 3rem;
  text-align: center;
  
 }
