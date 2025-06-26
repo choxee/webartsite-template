@@ -135,6 +135,8 @@ inter_env/*
 
 # Custom files
 
+.devcontainer
+
 .streamlit/secrets.toml
 
 backup
