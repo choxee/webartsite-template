@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from webartsite.path_config import contents_path
 
-st.title("🤝 Entra a Far Parte del Mondo L'Onda")
+st.title("Collabora con noi")
 
 st.info("""
 **L'energia di "Strada Chiusa" è alimentata da persone** che, come noi, credono nel potere della cultura e della collaborazione. 

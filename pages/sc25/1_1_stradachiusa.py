@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from webartsite.path_config import contents_path
 
-st.title("🛣️ Strada Chiusa: La Storia del Festival")
+st.title("Strada Chiusa: La storia")
 
 st.info("""
 **Strada Chiusa** è molto più di un semplice festival musicale. 

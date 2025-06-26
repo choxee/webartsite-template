@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from webartsite.path_config import contents_path
 
-st.title("🤝 Chi ci supporta")
+st.title("Chi ci supporta")
 
 st.info("""
 **Il successo di "Strada Chiusa" è indissolubilmente legato al supporto** di aziende, enti e associazioni 

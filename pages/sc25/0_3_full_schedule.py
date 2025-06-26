@@ -6,9 +6,8 @@ from webartsite.path_config import contents_path
 
 # Informazioni principali evento
 
-st.markdown("---")
+st.title("Programma completo SC25")
 
-st.header("Info evento")
 
 info_col1, info_col2 = st.columns(2)
 

@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from webartsite.path_config import contents_path
 
-st.title("📞 Contattaci: Siamo Qui per Te!")
+st.title("Contattaci")
 
 st.info("""
 **Hai domande, suggerimenti o vuoi semplicemente salutarci?** 

@@ -175,3 +175,47 @@ div[data-testid="stTopNavSection"]:hover {
     font-size: var(--font-size-base) !important;
   }
 }
+
+/* Fix topbar navigation centering */
+.rc-overflow {
+  position: absolute !important;
+  left: 51.5% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important; /* Changed from translateX to translate */
+  margin: 0 !important; /* Remove all margins */
+  width: auto !important;
+  flex: none !important;
+  justify-content: center !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  overflow: visible !important;
+  max-width: calc(100vw - 160px) !important; /* Prevent overflow on small screens */
+}
+
+/* Ensure items don't wrap and stay centered */
+.rc-overflow-item {
+  flex-shrink: 1 !important;
+  min-width: 0 !important; /* Allow items to shrink if needed */
+  white-space: nowrap !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .rc-overflow {
+    max-width: calc(100vw - 120px) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .rc-overflow {
+    max-width: calc(100vw - 80px) !important;
+    gap: 0.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .rc-overflow {
+    display: none !important; /* Hide on mobile as intended */
+  }
+}

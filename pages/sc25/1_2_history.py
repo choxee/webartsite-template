@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from webartsite.path_config import contents_path
 
-st.title("📚 La Nostra Storia: Un Decennio di Strada Chiusa")
+st.title("Un decennio di Strada Chiusa")
 
 st.info("""
 **Dal 2014, "Strada Chiusa" è cresciuta** fino a diventare un appuntamento imperdibile per gli appassionati 

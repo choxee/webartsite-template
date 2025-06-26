@@ -376,3 +376,78 @@
     transform: translate3d(0, 0, 0) !important;
   }
 }
+
+/* Fix sidebar header - remove NASCONDI text and position close button */
+.stSidebar [data-testid="stSidebarHeader"]::after {
+  display: none !important; /* Remove NASCONDI text completely */
+}
+
+/* Redesign sidebar header with title and close button on same line */
+.stSidebar [data-testid="stSidebarHeader"] {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(0,0,0,0.95) !important;
+  backdrop-filter: blur(15px) !important;
+  border-bottom: 2px solid rgba(220, 38, 38, 0.4) !important;
+  padding: 1rem 1.5rem !important;
+  margin-bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* Style the close button to stay on the right */
+.stSidebar [data-testid="stSidebarCollapseButton"] {
+  position: relative !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Add title to the left side of header */
+.stSidebar [data-testid="stSidebarHeader"]::before {
+  content: "STRADA CHIUSA 2025" !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-xl) !important;
+  font-weight: var(--font-weight-bold) !important;
+  color: var(--color-text) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.9)) !important;
+  flex: 1 !important;
+}
+
+/* Remove the old title that was added to the first div */
+.stSidebar > div:first-child::before {
+  display: none !important;
+}
+
+/* Move sidebar content up and add proper spacing */
+.stSidebar [data-testid="stSidebarNav"] {
+  margin-top: 0rem !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure sidebar content doesn't get hidden under sticky header */
+.stSidebar [data-testid="stSidebarUserContent"] {
+  padding-top: 0rem !important;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+  .stSidebar [data-testid="stSidebarHeader"]::before {
+    font-size: var(--font-size-lg) !important;
+  }
+
+  .stSidebar [data-testid="stSidebarHeader"] {
+    padding: 0.75rem 1rem !important;
+  }
+}
+
+.stSidebar [data-testid="stSidebarNav"] > ul > header:first-child {
+  margin-top: 0rem !important; /* Spacing before first section header */
+}

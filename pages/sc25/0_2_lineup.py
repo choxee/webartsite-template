@@ -4,10 +4,8 @@ from webartsite.path_config import contents_path
 
 st.html('<script>setTimeout(() => { [...document.querySelectorAll("button")].find(b => b.textContent.includes("«") || b.getAttribute("aria-label")?.includes("collapse"))?.click(); }, 100)</script>')
 
-st.markdown("---")
+st.title("Lineup SC25")
 
-# Headliners Section
-st.header("Lineup")
 
 headliner_col1, headliner_col2 = st.columns(2)
 
