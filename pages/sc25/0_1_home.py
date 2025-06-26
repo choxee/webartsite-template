@@ -55,7 +55,7 @@ st.markdown("---")
 
 # Anteprima Edizioni Passate
 st.header("🎭 Le Nostre Edizioni")
-st.write("**Dieci anni di storia, musica e cultura.** Rivivi i momenti salienti delle edizioni passate:")
+st.subheader("**Dieci anni di storia, musica e cultura.** Rivivi i momenti salienti delle edizioni passate:")
 
 # Highlights delle edizioni passate
 highlight_col1, highlight_col2, highlight_col3 = st.columns(3)

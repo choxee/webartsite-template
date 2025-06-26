@@ -2,8 +2,6 @@ import os
 import streamlit as st
 from webartsite.path_config import contents_path
 
-st.html('<script>setTimeout(() => { [...document.querySelectorAll("button")].find(b => b.textContent.includes("«") || b.getAttribute("aria-label")?.includes("collapse"))?.click(); }, 100)</script>')
-
 st.markdown("---")
 
 # Headliners Section

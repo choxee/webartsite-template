@@ -2,7 +2,9 @@ import os
 import streamlit as st
 from webartsite.path_config import contents_path
 
-st.title("🛣️ Strada Chiusa: La Storia del Festival")
+#st.title("🛣️ Strada Chiusa: La Storia del Festival")
+
+st.markdown("---")
 
 st.info("""
 **Strada Chiusa** è molto più di un semplice festival musicale. 
@@ -14,12 +16,12 @@ per la **rigenerazione urbana** e l'**impegno sociale** ad Acquaviva delle Fonti
 st.markdown("---")
 
 # Identità e Mission
-st.header("🎯 Identità e Missione")
+st.header("Identità e Missione")
 
 mission_col1, mission_col2 = st.columns(2)
 
 with mission_col1:
-    st.subheader("🌟 La Nostra Visione")
+    st.subheader("La Nostra Visione")
     st.write("""
     Strada Chiusa è esplicitamente concepito come una **celebrazione della cultura hip-hop** 
     e, in modo ancora più significativo, come un **catalizzatore per la rigenerazione urbana** 
@@ -30,7 +32,7 @@ with mission_col1:
     """)
 
 with mission_col2:
-    st.subheader("🎪 Un Festival Olistico")
+    st.subheader("Un Festival Olistico")
     st.write("""
     Il programma del festival dimostra un **impegno olistico** verso gli elementi fondanti 
     della cultura hip-hop, andando ben oltre il modello del concerto tradizionale.
@@ -42,7 +44,7 @@ with mission_col2:
 st.markdown("---")
 
 # I Quattro Pilastri
-st.header("🏛️ I Quattro Pilastri della Cultura Hip-Hop")
+st.header("I Quattro Pilastri della Cultura Hip-Hop")
 
 st.write("Strada Chiusa celebra integralmente i quattro elementi fondamentali della cultura hip-hop:")
 
@@ -81,7 +83,7 @@ with pillar_col2:
 st.markdown("---")
 
 # Attività complementari
-st.header("⚡ Oltre i Quattro Pilastri")
+st.header("Oltre i Quattro Pilastri")
 
 extra_col1, extra_col2, extra_col3 = st.columns(3)
 
@@ -94,7 +96,7 @@ with extra_col1:
     """)
 
 with extra_col2:
-    st.subheader("🏀 Street Sports")
+    st.subheader("Street Sports")
     st.write("""
     - **Torneo** di street basket
     - **Attività sportive** urbane
@@ -102,7 +104,7 @@ with extra_col2:
     """)
 
 with extra_col3:
-    st.subheader("👶 SC Kids")
+    st.subheader("SC Kids")
     st.write("""
     - **Attività per bambini**
     - **Laboratori creativi**
@@ -112,7 +114,7 @@ with extra_col3:
 st.markdown("---")
 
 # Impegno Sociale
-st.header("❤️ La Vocazione Sociale")
+st.header("La Vocazione Sociale")
 
 st.warning("""
 **La caratteristica più qualificante di Strada Chiusa è la sua esplicita missione sociale.**
@@ -124,7 +126,7 @@ trasformando aree trascurate in centri vibranti di attività culturale.
 social_col1, social_col2 = st.columns(2)
 
 with social_col1:
-    st.subheader("🏗️ Rigenerazione Urbana")
+    st.subheader("Rigenerazione Urbana")
     st.write("""
     **Obiettivi concreti:**
     - Riqualificazione di **spazi urbani dimenticati**
@@ -134,7 +136,7 @@ with social_col1:
     """)
 
 with social_col2:
-    st.subheader("💰 Raccolta Fondi")
+    st.subheader("Raccolta Fondi")
     st.write("""
     **Cause sostenute:**
     - **Ricerca sul cancro** (AIRC)
@@ -144,7 +146,7 @@ with social_col2:
     """)
 
 # SDGs ONU
-st.subheader("🌍 Allineamento con gli SDGs ONU")
+st.subheader("Allineamento con gli SDGs ONU")
 
 st.info("""
 **Strada Chiusa è allineato con gli Obiettivi di Sviluppo Sostenibile delle Nazioni Unite:**
@@ -159,12 +161,12 @@ Questa strategia eleva il festival, posizionandolo all'interno di un quadro glob
 st.markdown("---")
 
 # Modello di Finanziamento
-st.header("💡 Modello di Finanziamento Sostenibile")
+st.header("Modello di Finanziamento Sostenibile")
 
 finance_col1, finance_col2 = st.columns(2)
 
 with finance_col1:
-    st.subheader("🎯 Crowdfunding Comunitario")
+    st.subheader("Crowdfunding Comunitario")
     st.write("""
     **Numeri delle campagne passate:**
     - **€18.523** raccolti per la decima edizione
@@ -173,7 +175,7 @@ with finance_col1:
     """)
 
 with finance_col2:
-    st.subheader("🤝 Partnership Strategiche")
+    st.subheader("Partnership Strategiche")
     st.write("""
     **Tipologie di supporto:**
     - **Sponsor** commerciali locali
@@ -191,7 +193,7 @@ ma nel **benessere collettivo** e nel **progresso sociale**.
 st.markdown("---")
 
 # Connessione Generazionale
-st.header("🌉 Ponte Tra le Generazioni")
+st.header("Ponte Tra le Generazioni")
 
 st.write("""
 **Strada Chiusa crea un dialogo costante tra le generazioni del hip-hop italiano.**
@@ -204,7 +206,7 @@ generation_col1, generation_col2 = st.columns(2)
 
 with generation_col1:
     st.markdown("""
-    ### 👴 Onora il Passato
+    ### Onora il Passato
     - **Tributo** alle icone storiche
     - **Preservazione** della memoria culturale
     - **Trasmissione** del sapere
@@ -212,7 +214,7 @@ with generation_col1:
 
 with generation_col2:
     st.markdown("""
-    ### 👶 Coltiva il Futuro
+    ### Coltiva il Futuro
     - **Piattaforma** per nuovi talenti
     - **Continuità** della tradizione
     - **Evoluzione** culturale
@@ -226,7 +228,7 @@ tra la generazione pionieristica dell'hip-hop napoletano e il movimento contempo
 st.markdown("---")
 
 # Impatto e Riconoscimenti
-st.header("🏆 Impatto e Riconoscimenti")
+st.header("Impatto e Riconoscimenti")
 
 impact_col1, impact_col2, impact_col3 = st.columns(3)
 
@@ -245,12 +247,12 @@ with impact_col3:
 st.markdown("---")
 
 # Call to Action
-st.header("🚀 Unisciti al Movimento")
+st.header("Unisciti al Movimento")
 
 cta_col1, cta_col2 = st.columns(2)
 
 with cta_col1:
-    if st.button("👥 Scopri L'Onda", use_container_width=True):
+    if st.button("Scopri L'Onda", use_container_width=True):
         st.switch_page("pages/sc25/1_2_onda.py")
 
 with cta_col2:
@@ -258,7 +260,7 @@ with cta_col2:
         st.switch_page("pages/sc25/4_1_history.py")
 
 st.success("""
-🎵 **Strada Chiusa esemplifica una fase matura e pienamente evoluta della cultura hip-hop**, 
+**Strada Chiusa esemplifica una fase matura e pienamente evoluta della cultura hip-hop**, 
 in cui l'ethos del "rappresentare la comunità" viene tradotto in un'impresa sociale strutturata, 
 misurabile e sostenibile. 🎵
 """)

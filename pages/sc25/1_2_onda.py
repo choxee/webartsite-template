@@ -2,7 +2,9 @@ import os
 import streamlit as st
 from webartsite.path_config import contents_path
 
-st.title("🌊 L'Onda")
+st.markdown("---")
+
+st.header("🌊 L'Onda")
 
 st.info("""
 **L'Onda** è un'associazione culturale no-profit fondata nella primavera del 2014 ad Acquaviva delle Fonti (BA) 
@@ -14,14 +16,14 @@ Nata dall'**amicizia** e dalla **passione condivisa** per la cultura urbana! �
 st.markdown("---")
 
 # Presentazione dell'Associazione
-st.header("🎯 La Nostra Missione")
+st.header("La Nostra Missione")
 
 mission_col1, mission_col2 = st.columns(2)
 
 with mission_col1:
-    st.subheader("🌟 Obiettivi Principali")
+    st.subheader("Obiettivi Principali")
     st.write("""
-    La nostra associazione si propone di **valorizzare il territorio** attraverso eventi che trasformano 
+    L'Onda si propone di **valorizzare il territorio** attraverso eventi che trasformano 
     **spazi urbani inutilizzati** in luoghi di:
 
     - 🤝 **Incontro** e socializzazione
@@ -31,7 +33,7 @@ with mission_col1:
     """)
 
 with mission_col2:
-    st.subheader("🎤 Focus Culturale")
+    st.subheader("Focus Culturale")
     st.write("""
     L'obiettivo principale è **promuovere la cultura hip hop e urbana**, creando occasioni di:
 
@@ -44,7 +46,7 @@ with mission_col2:
 st.markdown("---")
 
 # Storia dell'Associazione
-st.header("📚 La Nostra Storia")
+st.header("La Nostra Storia")
 
 st.write("""
 **Dal 2014, L'Onda ha percorso un cammino di crescita e consolidamento**, 
@@ -97,8 +99,6 @@ st.markdown("---")
 
 # Il Team
 st.header("👥 Il Nostro Team")
-
-st.warning("🔥 **OLTRE 60 VOLONTARI ATTIVI** 🔥")
 
 st.write("""
 Siamo un **gruppo eterogeneo** di giovani e meno giovani, tutti uniti dalla passione per la cultura 

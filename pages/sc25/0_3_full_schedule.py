@@ -8,7 +8,7 @@ from webartsite.path_config import contents_path
 
 st.markdown("---")
 
-st.header("Info evento")
+st.header("Programma completo")
 
 info_col1, info_col2 = st.columns(2)
 

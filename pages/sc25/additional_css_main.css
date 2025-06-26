@@ -2,10 +2,6 @@
    MAIN CONTENT & LAYOUT STYLING
    ============================================== */
 
-/* ==============================================
-   BLACK SHADED THEME WITH BACKGROUND IMAGE
-   ============================================== */
-
 /* Background Image Setup */
 body, .stApp {
   background-image: var(--background-image) !important;
@@ -25,208 +21,226 @@ body, .stApp {
   backdrop-filter: blur(1px) !important;
 }
 
-/* Enhanced Typography with larger fonts and more letter spacing */
-html {
-  font-size: var(--font-size-base) !important;
-  letter-spacing: var(--letter-spacing-normal) !important;
-}
-
-body, p, div, span, label {
-  font-size: var(--font-size-base) !important;
-  letter-spacing: var(--letter-spacing-normal) !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing: var(--letter-spacing-wide) !important;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  text-align: center;
-}
-
-/* Main content area with glass effect */
+/* Content containers with transparency */
 .stMainBlockContainer {
-  background: rgba(0,0,0,0.7) !important;
+  background: rgba(0,0,0,0.05) !important;
   backdrop-filter: blur(3px) !important;
   border: 1px solid rgba(255,255,255,0.1) !important;
 }
 
 .stMain {
-  background: rgba(0,0,0,0.5) !important;
+  background: rgba(0,0,0,0.02) !important;
   backdrop-filter: blur(2px) !important;
 }
 
-/* Form elements with enhanced typography */
+/* ==============================================
+   FORMS & INPUTS
+   ============================================== */
 .stForm {
   background: rgba(0,0,0,0.8) !important;
   backdrop-filter: blur(5px) !important;
   border: 1px solid rgba(220, 38, 38, 0.2) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 2rem !important;
+  margin: 2rem 0 !important;
 }
 
-.stTextInput label {
+.stTextInput label,
+.stTextArea label,
+.stSelectbox label {
   font-size: var(--font-size-lg) !important;
   letter-spacing: var(--letter-spacing-normal) !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-primary) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  text-transform: uppercase !important;
 }
 
-.stTextInput input {
+.stTextInput input,
+.stTextArea textarea,
+.stSelectbox select {
   font-size: var(--font-size-base) !important;
   letter-spacing: var(--letter-spacing-normal) !important;
   background: rgba(0,0,0,0.6) !important;
   backdrop-filter: blur(3px) !important;
   color: var(--color-text) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: var(--radius) !important;
+  padding: 1rem !important;
+  transition: var(--transition-med) !important;
 }
 
+.stTextInput input:focus,
+.stTextArea textarea:focus,
+.stSelectbox select:focus {
+  border-color: rgba(220, 38, 38, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* ==============================================
+   BUTTONS
+   ============================================== */
+.stButton button,
 .stFormSubmitButton button {
   background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important;
-  font-size: var(--font-size-lg) !important;
+  color: var(--color-text) !important;
+  border: none !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1rem 2rem !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-bold) !important;
+  text-transform: uppercase !important;
   letter-spacing: var(--letter-spacing-wide) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: var(--transition-med) !important;
+  cursor: pointer !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
 }
 
+.stButton button:hover,
 .stFormSubmitButton button:hover {
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
   background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
 }
 
-/* Alert containers */
+/* ==============================================
+   ALERTS & METRICS
+   ============================================== */
+.stAlert,
 .stAlertContainer {
   background: rgba(0,0,0,0.8) !important;
   backdrop-filter: blur(5px) !important;
   border: 1px solid rgba(220, 38, 38, 0.3) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1.5rem !important;
 }
 
-.stAlertContainer p {
+.stAlertContainer p,
+.stAlert p {
   font-size: var(--font-size-base) !important;
   letter-spacing: var(--letter-spacing-normal) !important;
+  color: var(--color-text) !important;
 }
 
-/* Headings with enhanced spacing */
+.stMetric {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1.5rem !important;
+  text-align: center !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.stMetric label {
+  color: var(--color-text-muted) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wider) !important;
+}
+
+.stMetric [data-testid="metric-value"] {
+  color: var(--color-primary) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-3xl) !important;
+  font-weight: var(--font-weight-normal) !important;
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.9));
+}
+
+/* ==============================================
+   HEADINGS
+   ============================================== */
 .stHeading h1 {
   font-size: var(--font-size-5xl) !important;
   letter-spacing: var(--letter-spacing-wide) !important;
 }
 
-/* Enhanced shadows to match black theme */
+/* ==============================================
+   SHADOWS
+   ============================================== */
 .shadow-sm { box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
 .shadow-md { box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important; }
 .shadow-indigo { box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important; }
 
-/* AGGRESSIVE FULL-WIDTH - NO MARGINS */
+/* ==============================================
+   FULL-WIDTH LAYOUT
+   ============================================== */
 .stApp,
 .stMain,
 .stMainBlockContainer,
 .stVerticalBlock,
 .stForm,
-.stAlertContainer,
-.stAppEmbeddingId-sydrjgxn657a,
-.st-ae {
-  margin: 10 !important;
-  padding: 0.5rem 0.25rem !important;  /* Minimal padding for readability */
+.stAlertContainer {
+  margin: 0.5rem !important;
+  padding: 0.5rem 0.25rem !important;
   width: 100% !important;
   max-width: 100% !important;
 }
 
-/* Only keep minimal padding for text readability */
 .stMainBlockContainer {
   padding: 1rem 0.5rem !important;
 }
 
 /* ==============================================
-   HIDE STREAMLIT ELEMENT TOOLBAR
+   INCREASED TRANSPARENCY
    ============================================== */
-
-/* Hide the element toolbar completely */
-.stElementToolbar {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-/* Alternative selector if the above doesn't work */
-[data-testid="stElementToolbar"] {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-/* Hide toolbar buttons specifically */
-.stElementToolbarButton {
-  display: none !important;
-}
-
-/* Hide any floating action buttons */
-.element-container .stElementToolbar,
-.stPlotlyChart .stElementToolbar,
-.stDataFrame .stElementToolbar {
-  display: none !important;
-}
-
-/* ==============================================
-   INCREASED TRANSPARENCY FOR BACKGROUND VISIBILITY
-   ============================================== */
-
-/* Main App Container - More Transparent */
 .stApp {
-  background: rgba(15, 23, 42, 0.3) !important; /* Very transparent */
+  background: rgba(15, 23, 42, 0.3) !important;
 }
 
-/* Main Content Areas - Highly Transparent */
 .stMain {
-  background: rgba(17, 24, 39, 0.2) !important; /* Very transparent */
-  backdrop-filter: blur(2px) !important; /* Light blur for readability */
+  background: rgba(17, 24, 39, 0.2) !important;
+  backdrop-filter: blur(2px) !important;
 }
 
 .stMainBlockContainer {
-  background: rgba(15, 23, 42, 0.25) !important; /* Very transparent */
-  backdrop-filter: blur(3px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Subtle border */
-}
-
-/* Container Elements - More Transparent */
-.stAppEmbeddingId-sydrjgxn657a,
-.st-ae {
-  background: rgba(15, 23, 42, 0.3) !important;
+  background: rgba(15, 23, 42, 0.25) !important;
   backdrop-filter: blur(3px) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .stVerticalBlock {
-  background: rgba(0, 0, 0, 0.1) !important; /* Very light overlay */
+  background: rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Form Elements - Transparent but Readable */
 .stForm {
-  background: rgba(15, 23, 42, 0.4) !important; /* Slightly more opaque for readability */
+  background: rgba(15, 23, 42, 0.4) !important;
   backdrop-filter: blur(5px) !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
-/* Alert Containers - Transparent */
 .stAlertContainer {
   background: rgba(17, 24, 39, 0.4) !important;
   backdrop-filter: blur(5px) !important;
   border: 1px solid rgba(236, 72, 153, 0.3) !important;
 }
 
-/* Text Input Backgrounds - Semi-transparent */
-.stTextInput input {
+.stTextInput input,
+.stTextArea textarea,
+.stSelectbox select {
   background: rgba(15, 23, 42, 0.6) !important;
   backdrop-filter: blur(3px) !important;
   color: #f8fafc !important;
 }
 
-/* Ensure text remains readable with semi-transparent backgrounds */
-.stTextInput label {
+.stTextInput label,
+.stTextArea label,
+.stSelectbox label {
   color: #f8fafc !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Add text shadow to improve readability on transparent backgrounds */
+/* Enhanced text shadows for readability */
 p, h1, h2, h3, h4, h5, h6 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
-
-/* Ultra Transparent Version - Use with Caution */
-/* This makes containers almost invisible - only use if background image is not too busy */
-
+/* Ultra transparent version for maximum background visibility */
 .stMainBlockContainer,
 .stMain,
 .stVerticalBlock {
@@ -234,3 +248,27 @@ p, h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(1px) !important;
 }
 
+/* ==============================================
+   MOBILE RESPONSIVENESS
+   ============================================== */
+@media (max-width: 768px) {
+  .stForm {
+    padding: 1.5rem !important;
+  }
+
+  .stMainBlockContainer {
+    margin: 0.25rem !important;
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .stMainBlockContainer {
+    margin: 0.125rem !important;
+    padding: 0.75rem !important;
+  }
+
+  .stForm {
+    padding: 1.5rem !important;
+  }
+}
