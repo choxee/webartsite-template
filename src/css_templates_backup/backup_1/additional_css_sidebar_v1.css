@@ -1,0 +1,220 @@
+/* ==============================================
+   SIDEBAR WITH STICKY CLOSE BUTTON
+   ============================================== */
+
+/* Desktop sidebar styling */
+.stSidebar {
+  background: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(20,20,20,0.8)) !important;
+  backdrop-filter: blur(10px) !important;
+  border-right: 1px solid rgba(255,255,255,0.1) !important;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.5) !important;
+  position: fixed !important;
+  height: 100vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  z-index: 999999 !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(220, 38, 38, 0.5) rgba(0, 0, 0, 0.3) !important;
+}
+
+/* HIDE the navigation section header title */
+.stSidebar [data-testid="stNavSectionHeader"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* HIDE the navigation section header title */
+.stSidebar [data-testid="stNavSectionHeader"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Create sticky close button at top of sidebar */
+.stSidebar::before {
+  content: "« « NASCONDI" !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  display: block !important;
+  height: 80px !important;
+  margin: 1rem !important;
+  padding: 0 !important;
+  background: var(--gradient-indigo) !important;
+  border-radius: var(--radius-lg) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: var(--transition-med) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  backdrop-filter: blur(10px) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-bold) !important;
+  color: var(--color-text) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+.stSidebar::before:hover {
+  background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-indigo) !important;
+}
+
+/* Sidebar content spacing */
+.stSidebar [data-testid="stSidebarUserContent"] {
+  padding-top: 1rem !important;
+  padding-bottom: 2rem !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  min-height: 100vh !important;
+  padding-bottom: 4rem !important;
+}
+
+.stSidebar [data-testid="stSidebarNavLink"] {
+  font-size: var(--font-size-base) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+  background: rgba(0,0,0,0.3) !important;
+  margin: 0.5rem 0.5rem !important;
+  border-radius: var(--radius) !important;
+}
+
+.stSidebar [data-testid="stSidebarNavLink"]:hover {
+  background: rgba(220, 38, 38, 0.2) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+.stSidebar [aria-current="page"] {
+  background: rgba(220, 38, 38, 0.3) !important;
+  border: 1px solid rgba(220, 38, 38, 0.5) !important;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important;
+}
+
+/* Custom scrollbar for sidebar */
+.stSidebar::-webkit-scrollbar {
+  width: 6px !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.stSidebar::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.5) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.stSidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.7) !important;
+}
+
+.stSidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+/* Force scroll behavior */
+.stSidebar,
+.stSidebar > div,
+.stSidebar [data-testid="stSidebarUserContent"] {
+  scroll-behavior: smooth !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* ==============================================
+   MOBILE RESPONSIVE SIDEBAR
+   ============================================== */
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+  .stSidebar {
+    width: 280px !important;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  /* Mobile sidebar optimizations */
+  .stSidebar {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important; /* Dynamic viewport height for mobile */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 999999 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-top: 20px !important;
+  }
+
+  /* Sidebar content on mobile */
+  .stSidebar > div {
+    height: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 3rem !important;
+    padding-top: 1rem !important;
+  }
+
+  /* Mobile navigation links - larger touch targets */
+  .stSidebar [data-testid="stSidebarNavLink"] {
+    padding: 1.25rem 1.5rem !important;
+    margin: 0.75rem 1rem !important;
+    font-size: var(--font-size-lg) !important;
+    min-height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* Adjust close button for mobile */
+  .stSidebar::before {
+    margin: 0.5rem !important;
+    height: 60px !important;
+    font-size: var(--font-size-base) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra small screens */
+  .stSidebar {
+    width: 100vw !important;
+    padding-top: 10px !important;
+  }
+
+  /* Larger touch targets for very small screens */
+  .stSidebar [data-testid="stSidebarNavLink"] {
+    padding: 1.5rem 1.5rem !important;
+    margin: 1rem 1rem !important;
+    font-size: var(--font-size-lg) !important;
+    min-height: 60px !important;
+  }
+
+  /* Smaller close button for very small screens */
+  .stSidebar::before {
+    height: 50px !important;
+    font-size: var(--font-size-sm) !important;
+    margin: 0.25rem !important;
+  }
+}
+
+/* ==============================================
+   iOS SPECIFIC FIXES
+   ============================================== */
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .stSidebar {
+    -webkit-overflow-scrolling: touch !important;
+    transform: translate3d(0, 0, 0) !important; /* Hardware acceleration */
+  }
+
+  .stSidebar > div {
+    -webkit-overflow-scrolling: touch !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+}

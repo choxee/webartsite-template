@@ -1,0 +1,411 @@
+/* ==============================================
+   MAIN CONTENT & LAYOUT STYLING
+   ============================================== */
+
+/* ==============================================
+   BLACK SHADED THEME WITH BACKGROUND IMAGE
+   ============================================== */
+
+/* Background Image Setup */
+body, .stApp {
+  background-image: var(--background-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Main content overlay */
+.stApp {
+  background: var(--background-image), var(--bg-gradient-primary) !important;
+  background-size: cover, auto !important;
+  background-position: center, center !important;
+  background-attachment: fixed, scroll !important;
+  background-repeat: no-repeat, no-repeat !important;
+  backdrop-filter: blur(1px) !important;
+}
+
+/* Enhanced Typography with larger fonts and more letter spacing */
+html {
+  font-size: var(--font-size-base) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+body, p, div, span, label {
+  font-size: var(--font-size-base) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: var(--letter-spacing-wide) !important;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  text-align: center;
+}
+
+/* Main content area with glass effect */
+.stMainBlockContainer {
+  background: rgba(0,0,0,0.7) !important;
+  backdrop-filter: blur(3px) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+.stMain {
+  background: rgba(0,0,0,0.5) !important;
+  backdrop-filter: blur(2px) !important;
+}
+
+/* Form elements with enhanced typography */
+.stForm {
+  background: rgba(0,0,0,0.8) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
+}
+
+.stTextInput label {
+  font-size: var(--font-size-lg) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+.stTextInput input {
+  font-size: var(--font-size-base) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+  background: rgba(0,0,0,0.6) !important;
+  backdrop-filter: blur(3px) !important;
+  color: var(--color-text) !important;
+}
+
+.stFormSubmitButton button {
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important;
+  font-size: var(--font-size-lg) !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+}
+
+.stFormSubmitButton button:hover {
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4) !important;
+  background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+}
+
+/* Alert containers */
+.stAlertContainer {
+  background: rgba(0,0,0,0.8) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(220, 38, 38, 0.3) !important;
+}
+
+.stAlertContainer p {
+  font-size: var(--font-size-base) !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+/* Headings with enhanced spacing */
+.stHeading h1 {
+  font-size: var(--font-size-5xl) !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+}
+
+/* Enhanced shadows to match black theme */
+.shadow-sm { box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
+.shadow-md { box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important; }
+.shadow-indigo { box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important; }
+
+/* AGGRESSIVE FULL-WIDTH - NO MARGINS */
+.stApp,
+.stMain,
+.stMainBlockContainer,
+.stVerticalBlock,
+.stForm,
+.stAlertContainer,
+.stAppEmbeddingId-sydrjgxn657a,
+.st-ae {
+  margin: 10 !important;
+  padding: 0.5rem 0.25rem !important;  /* Minimal padding for readability */
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Only keep minimal padding for text readability */
+.stMainBlockContainer {
+  padding: 1rem 0.5rem !important;
+}
+
+/* ==============================================
+   HIDE STREAMLIT ELEMENT TOOLBAR
+   ============================================== */
+
+/* Hide the element toolbar completely */
+.stElementToolbar {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Alternative selector if the above doesn't work */
+[data-testid="stElementToolbar"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide toolbar buttons specifically */
+.stElementToolbarButton {
+  display: none !important;
+}
+
+/* Hide any floating action buttons */
+.element-container .stElementToolbar,
+.stPlotlyChart .stElementToolbar,
+.stDataFrame .stElementToolbar {
+  display: none !important;
+}
+
+/* ==============================================
+   INCREASED TRANSPARENCY FOR BACKGROUND VISIBILITY
+   ============================================== */
+
+/* Main App Container - More Transparent */
+.stApp {
+  background: rgba(15, 23, 42, 0.3) !important; /* Very transparent */
+}
+
+/* Main Content Areas - Highly Transparent */
+.stMain {
+  background: rgba(17, 24, 39, 0.2) !important; /* Very transparent */
+  backdrop-filter: blur(2px) !important; /* Light blur for readability */
+}
+
+.stMainBlockContainer {
+  background: rgba(15, 23, 42, 0.25) !important; /* Very transparent */
+  backdrop-filter: blur(3px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Subtle border */
+}
+
+/* Container Elements - More Transparent */
+.stAppEmbeddingId-sydrjgxn657a,
+.st-ae {
+  background: rgba(15, 23, 42, 0.3) !important;
+  backdrop-filter: blur(3px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.stVerticalBlock {
+  background: rgba(0, 0, 0, 0.1) !important; /* Very light overlay */
+}
+
+/* Form Elements - Transparent but Readable */
+.stForm {
+  background: rgba(15, 23, 42, 0.4) !important; /* Slightly more opaque for readability */
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Alert Containers - Transparent */
+.stAlertContainer {
+  background: rgba(17, 24, 39, 0.4) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(236, 72, 153, 0.3) !important;
+}
+
+/* Text Input Backgrounds - Semi-transparent */
+.stTextInput input {
+  background: rgba(15, 23, 42, 0.6) !important;
+  backdrop-filter: blur(3px) !important;
+  color: #f8fafc !important;
+}
+
+/* Ensure text remains readable with semi-transparent backgrounds */
+.stTextInput label {
+  color: #f8fafc !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Add text shadow to improve readability on transparent backgrounds */
+p, h1, h2, h3, h4, h5, h6 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+
+/* Ultra Transparent Version - Use with Caution */
+/* This makes containers almost invisible - only use if background image is not too busy */
+
+.stMainBlockContainer,
+.stMain,
+.stVerticalBlock {
+  background: rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: blur(1px) !important;
+}
+
+/* Fix h1 red color and position */
+h1, .stMarkdown h1 {
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: #dc2626 !important; /* Fallback for browsers that don't support background-clip */
+  margin-top: 1.5rem !important;
+  margin-bottom: 3rem !important;
+  margin-left: 2rem !important; /* Increase from current 3rem */
+
+}
+
+/* Ensure it works in wide mode specifically */
+@media (min-width: 769px) {
+  h1, .stMarkdown h1 {
+    margin-top: 3rem !important;
+  }
+}
+
+/* Enhanced Metrics Styling - Label Left, Value Right */
+.stMetric {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 2px solid rgba(220, 38, 38, 0.3) !important;
+  border-radius: var(--radius-xl) !important;
+  padding: 2rem 1.5rem !important;
+  box-shadow: 0 8px 32px rgba(220, 38, 38, 0.2) !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.stMetric:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(220, 38, 38, 0.6) !important;
+  box-shadow: 0 12px 40px rgba(220, 38, 38, 0.3) !important;
+}
+
+/* Create horizontal container for label and value */
+.stMetric::before {
+  content: "";
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Force label and value containers to be in a row */
+.stMetric [data-testid="stMetricLabel"] {
+  position: absolute !important;
+  left: 1.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+}
+
+.stMetric [data-testid="stMetricValue"] {
+  position: absolute !important;
+  right: 1.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+}
+
+/* Make metric container relative for absolute positioning */
+.stMetric {
+  position: relative !important;
+  min-height: 120px !important;
+}
+
+/* Metric Label (left side) */
+.stMetric [data-testid="stMetricLabel"] p {
+  color: var(--color-text-muted) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wider) !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+  margin: 0 !important;
+
+}
+
+/* Metric Value (right side) - Bigger text */
+.stMetric [data-testid="stMetricValue"] {
+  color: #ffffff !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-4xl) !important; /* Much bigger */
+  font-weight: var(--font-weight-bold) !important;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.9) !important;
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.9)) !important;
+}
+
+/* Metric Delta (bottom) */
+.stMetric [data-testid="stMetricDelta"] {
+  position: absolute !important;
+  bottom: 0.1rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+}
+
+.stMetric [data-testid="stMetricDelta"] svg {
+  color: rgba(220, 38, 38, 0.8) !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.stMetric [data-testid="stMetricDelta"] div {
+  color: var(--color-text-muted) !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-medium) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-normal) !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+}
+
+/* Force red background on all main container buttons */
+.stButton button {
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 0.875rem 2rem !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--letter-spacing-wide) !important;
+  cursor: pointer !important;
+  transition: var(--transition-med) !important;
+  box-shadow: var(--shadow-sm) !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+/* Hover state */
+.stButton button:hover {
+  background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Target all button types in main container */
+button[kind="secondary"],
+button[kind="primary"],
+.stButton [data-testid="stBaseButton-secondary"],
+.stButton [data-testid="stBaseButton-primary"] {
+  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171) !important;
+  color: #ffffff !important;
+}
+
+/* Hover for all button types */
+button[kind="secondary"]:hover,
+button[kind="primary"]:hover,
+.stButton [data-testid="stBaseButton-secondary"]:hover,
+.stButton [data-testid="stBaseButton-primary"]:hover {
+  background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+}
+
+h2, .stMarkdown h2 {
+  text-align: center !important;        /* Horizontal centering */
+  margin-left: 1.5rem !important;         /* Left spacing */
+  /* margin-right: 4rem !important; */
+  /* margin-top: 2rem !important; */
+  /* margin-bottom: 1.5rem !important; */
+}
